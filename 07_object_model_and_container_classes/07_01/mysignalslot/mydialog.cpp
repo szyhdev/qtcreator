@@ -1,9 +1,11 @@
 #include "mydialog.h"
 #include "ui_mydialog.h"
+
 #include <QDebug>
 
 MyDialog::MyDialog(QWidget *parent) :
-        QDialog(parent), ui(new Ui::MyDialog)
+    QDialog(parent),
+    ui(new Ui::MyDialog)
 {
     ui->setupUi(this);
 }
@@ -15,8 +17,8 @@ MyDialog::~MyDialog()
 
 void MyDialog::on_pushButton_clicked()
 {
-    int value = ui->spinBox->value();  // 获取输入的数值
-    emit dlgReturn(value);             // 发射信号
+    int value = ui->spinBox->value();
+    emit dlgReturn(value);
     qDebug() << "signal is emitted";
-    close();                           // 关闭对话框
+    close();
 }

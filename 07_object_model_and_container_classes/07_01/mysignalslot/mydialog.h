@@ -19,7 +19,7 @@ private:
     Ui::MyDialog *ui;
 
 signals:
-    void dlgReturn(int);                // 自定义的信号
+    void dlgReturn(int);
 
 private slots:
     void on_pushButton_clicked();

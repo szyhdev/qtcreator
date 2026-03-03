@@ -4,19 +4,20 @@
 #
 #-------------------------------------------------
 
-QT += core gui
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = mysignalslot
 TEMPLATE = app
 
+
 SOURCES += main.cpp\
         widget.cpp \
-        mydialog.cpp
+    mydialog.cpp
 
-HEADERS += widget.h \
-        mydialog.h
+HEADERS  += widget.h \
+    mydialog.h
 
-FORMS += widget.ui \
-        mydialog.ui
+FORMS    += widget.ui \
+    mydialog.ui
