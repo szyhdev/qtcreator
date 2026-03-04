@@ -2,7 +2,9 @@
 #define WIDGET_H
 
 #include <QWidget>
+
 class MyLineEdit;
+
 namespace Ui {
 class Widget;
 }

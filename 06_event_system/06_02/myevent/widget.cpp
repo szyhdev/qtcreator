@@ -1,6 +1,7 @@
 #include "widget.h"
 #include "ui_widget.h"
 #include "mylineedit.h"
+
 #include <QKeyEvent>
 #include <QDebug>
 
@@ -11,8 +12,7 @@ Widget::Widget(QWidget *parent) :
 
     lineEdit = new MyLineEdit(this);
     lineEdit->move(100, 100);
-
-    lineEdit->installEventFilter(this);  // 在Widget上为lineEdit安装事件过滤器
+    lineEdit->installEventFilter(this);
 }
 
 Widget::~Widget()
@@ -23,15 +23,16 @@ Widget::~Widget()
 void Widget::keyPressEvent(QKeyEvent *event)
 {
     Q_UNUSED(event);
-    qDebug() << tr("Widget键盘按下事件");
+    qDebug() << tr("Widget keyPressEvent");
 }
 
-bool Widget::eventFilter(QObject *obj, QEvent *event)  // 事件过滤器
+bool Widget::eventFilter(QObject *obj, QEvent *event)
 {
-    if (obj == lineEdit) {  // 如果是lineEdit部件上的事件
+    if (obj == lineEdit) {
         if (event->type() == QEvent::KeyPress) {
-            qDebug() << tr("Widget的事件过滤器");
+            qDebug() << tr("Widget eventFilter");
         }
     }
+
     return QWidget::eventFilter(obj, event);
 }
