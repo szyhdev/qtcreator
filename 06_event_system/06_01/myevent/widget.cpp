@@ -1,6 +1,7 @@
 #include "widget.h"
 #include "ui_widget.h"
 #include "mylineedit.h"
+
 #include <QKeyEvent>
 #include <QDebug>
 
@@ -21,5 +22,5 @@ Widget::~Widget()
 void Widget::keyPressEvent(QKeyEvent *event)
 {
     Q_UNUSED(event);
-    qDebug() << tr("Widget键盘按下事件");
+    qDebug() << tr("Widget keyPressEvent");
 }
